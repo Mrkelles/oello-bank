@@ -11,10 +11,11 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
         <div className="bank-card_content">
           <div>
             <h1 className="text-16 font-semibold text-white">
-              {account.name}
+              {userName}
             </h1>
             <p className="font-ibm-plex-serif font-black text-white">
               {formatAmount(account.currentBalance)}
+              {/* {formatAmount(123.80)} */}
             </p>
           </div>
 
@@ -34,13 +35,13 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
         </div>
 
         <div className="bank-card_icon">
-          <Image 
+          <Image
             src="/icons/Paypass.svg"
             width={20}
             height={24}
             alt="pay"
           />
-          <Image 
+          <Image
             src="/icons/mastercard.svg"
             width={45}
             height={32}
@@ -49,7 +50,7 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
           />
         </div>
 
-        <Image 
+        <Image
           src="/icons/lines.png"
           width={316}
           height={190}
@@ -58,7 +59,7 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
         />
       </Link>
 
-      {/* {showBalance && <Copy title={account?.sharaebleId} />} */}
+      {showBalance && <Copy title={account?.shareableId} />}
     </div>
     </div>
   )

@@ -60,7 +60,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type Transaction = {
@@ -75,7 +75,6 @@ declare type Transaction = {
   category: string;
   date: string;
   image: string;
-  type: string;
   $createdAt: string;
   channel: string;
   senderBankId: string;
@@ -89,7 +88,7 @@ declare type Bank = {
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type AccountTypes =
@@ -141,6 +140,7 @@ declare interface CreditCardProps {
   account: Account;
   userName: string;
   showBalance?: boolean;
+  //currentBalance:number;
 }
 
 declare interface BankInfoProps {
@@ -241,6 +241,7 @@ declare interface CategoryBadgeProps {
 }
 
 declare interface TransactionTableProps {
+  accounts: Account[];
   transactions: Transaction[];
 }
 
@@ -263,6 +264,7 @@ declare interface getAccountsProps {
 
 declare interface getAccountProps {
   appwriteItemId: string;
+  //accountId: string;
 }
 
 declare interface getInstitutionProps {
@@ -314,7 +316,7 @@ declare interface createBankAccountProps {
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
-  sharableId: string;
+  shareableId: string;
 }
 
 declare interface getBanksProps {
